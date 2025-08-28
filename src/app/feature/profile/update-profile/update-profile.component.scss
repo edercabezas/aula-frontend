@@ -1,0 +1,103 @@
+/* Contenedor padre de toda la vista */
+.page-container {
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: center; /* centra vertical */
+  min-height: 100vh; /* ocupa toda la pantalla */
+  background: linear-gradient(135deg, #386bbd 0%, #0f172a 100%);
+
+
+  box-sizing: border-box;
+}
+
+/* El formulario */
+.form-container {
+  margin-top: 5rem;
+  max-width: 1000px;
+  width: 100%;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-title {
+  text-align: center;
+  // margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // gap: 18px;
+}
+
+.bio-field {
+  grid-column: 1 / span 2;
+}
+
+.form-actions {
+  grid-column: 1 / span 2;
+  display: flex;
+  justify-content: center;
+   margin-top: 20px;
+
+    //  padding: 1rem 0.5rem;
+      // margin-bottom: 1rem;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+
+      button {
+        width: 50%;
+        padding: 0.8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        background: linear-gradient(90deg, #0066ff, #00ccff);
+        color: #fff;
+        transition: 0.3s ease-in-out;
+        height: 50px;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+      }
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+/* Responsive: en móvil solo 1 columna */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-field,
+  .form-actions {
+    // grid-column: 1 / span 1;
+  }
+}
+
+mat-form-field {
+  transition: all 0.3s ease;
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 8px;
+  .mat-mdc-text-field-wrapper {
+    border-radius: 12px !important;
+  }
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    // background-color: #d7e1f3;
+  }
+}

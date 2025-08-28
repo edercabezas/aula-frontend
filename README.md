@@ -1,59 +1,87 @@
-# AulaFrontend
+app
+│── app.module.ts                 // Módulo raíz
+│── app-routing.module.ts         // Rutas raíz
+│
+├── core                          // Servicios y lógica que se usa en toda la app
+│   ├── guards
+│   │   └── auth.guard.ts
+│   │
+│   ├── interceptors
+│   │   └── auth.interceptor.ts
+│   │
+│   └── services
+│       ├── alert
+│       │   └── alert.service.ts
+│       │
+│       ├── auth
+│       │   └── auth.service.ts
+│       │
+│       ├── crud
+│       │   └── crud.service.ts
+│       │
+│       └── storage
+│           └── storage.service.ts
+│
+├── feature                       // Cada feature tiene su propio módulo
+│   ├── auth
+│   │   ├── login                 // Login component
+│   │   │   └── login.component.ts|html|scss
+│   │   ├── auth-routing.module.ts
+│   │   └── auth.module.ts
+│   │
+│   └── profile
+│       ├── update-photo
+│       │   └── update-photo.component.ts|html|scss
+│       ├── update-profile
+│       │   └── update-profile.component.ts|html|scss
+│       ├── view-profile
+│       │   └── view-profile.component.ts|html|scss
+│       ├── profile-routing.module.ts
+│       └── profile.module.ts
+│
+├── import                        // Módulo de imports globales
+│   └── import.module.ts
+│
+├── shared                        // Componentes reutilizables reutilizables
+│   ├── shared.module.ts
+│   │
+│   ├── header
+│   │   └── header.component.ts|html|scss
+│   │
+│   └── spinner
+│       └── spinner.component.ts|html|scss
+│
+└── assets                        // Recursos estáticos (imgs, icons, css)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
 
-## Development server
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
+# FrontEnd
+Este prueba tecnica esta desarrollada en angualr 19
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Requisitos
 
-## Code scaffolding
+1. instalar version de node 20 en adelante (https://nodejs.org/es/)
+2. instalar angular (npm install -g @angular/cli)
+3. Tener instalado git (https://git-scm.com/)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Clonar 
+1. Clonar repositorio (https://gitlab.com/edercortez10/innclod/-/tree/develop?ref_type=heads)
 
-```bash
-ng generate component component-name
-```
+## configuracion de ambiente local
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2. ingresar a la carpeta del repositorio  (cd innclod)
+3. Instalacion de dependencia de angualr (npm install o npm i)
+4. levantar el servidor local angular (ng serve o ng s)
+5. crear nuevo componente (ng generate component nombre_componente o ng g c nombre_componente)
+6. visualizar el proyecto en local (http://localhost:4200/)
 
-```bash
-ng generate --help
-```
+## despliegeue a producció
 
-## Building
+7. compilar el proeycto para desliegue (ng build)
 
-To build the project run:
 
-```bash
-ng build
-```
+Nota cada uno de los puntos se desarrollo de acuerdo a la especificaciones del documento hubieron una inconcistencia 
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Estructura se solicitaba este campo "tipo_naturaleza": "natural", pero el back no loe staba esperando.
+2. La imagen nos e puede cargar ya que al aprecer el back no esta exponiendo los documentso estaticos

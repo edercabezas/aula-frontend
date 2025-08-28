@@ -1,0 +1,23 @@
+<app-header />
+<div class="container__center">
+  <div class="photo-frame">
+  <img id="profileImage" [src]="logoImageUrl" alt="Foto" />
+
+  <label  class="upload-icon" (click)="opeWindows()">
+    <img src="./assets/camaramara-50.png" alt="">
+  </label>
+
+</div>
+
+</div>
+  <input type="file" id="fileInput" accept="image/*" style="display: none;" (change)="onFileSelected($event)" />
+
+
+
+@if (spinnerShow) {
+<div class="container__spiner">
+  <app-spiner
+    [title]="'Un momento estamos cerrando su sesión'"
+  ></app-spiner>
+</div>
+}

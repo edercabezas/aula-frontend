@@ -1,0 +1,108 @@
+<app-header />
+
+<div class="page-container">
+  <div class="form-container">
+    <h2 class="form-title">Mostrar perfil</h2>
+    <div class="max-w-3xl mx-auto p-6">
+      @if (dataProfile) {
+      <mat-card class="shadow-lg rounded-2xl mat-elevation-z6">
+        <mat-card-header>
+          <div mat-card-avatar class="profile-avatar">
+            @if (dataProfile.basic_info && dataProfile.basic_info.foto) {
+            <img
+              [src]="normalizeMedia(dataProfile.basic_info.foto)"
+              alt="Foto perfil"
+              class="w-20 h-20 rounded-full object-cover"
+            />
+            } @else {
+            <mat-icon class="text-5xl text-gray-400"> account_circle </mat-icon>
+            }
+          </div>
+          <mat-card-title class="text-xl font-semibold">
+            {{ dataProfile.basic_info?.first_name }}
+            {{ dataProfile.basic_info?.last_name }}
+          </mat-card-title>
+          <mat-card-subtitle class="text-gray-500">
+            {{ dataProfile.basic_info?.email }}
+          </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="mt-6 space-y-3">
+          <p>
+            <mat-icon class="mr-2 text-primary">phone</mat-icon>
+            <strong>Teléfono:</strong> {{ dataProfile.basic_info?.telefono }}
+          </p>
+
+          <p>
+            <mat-icon class="mr-2 text-primary">person</mat-icon>
+            <strong>Tipo Usuario:</strong> {{ dataProfile.tipo_usuario }}
+          </p>
+
+          <p>
+            <mat-icon class="mr-2 text-primary">credit_card</mat-icon>
+            <strong>Documento:</strong> {{ dataProfile.basic_info?.documento }}
+          </p>
+
+          <p>
+            <mat-icon class="mr-2 text-primary">info</mat-icon>
+            <strong>Biografía:</strong> {{ dataProfile.basic_info?.biografia }}
+          </p>
+
+          <mat-divider></mat-divider>
+
+          <div class="flex gap-3 mt-4">
+            <a
+              *ngIf="dataProfile.basic_info?.redes_sociales?.linkedin"
+              [href]="dataProfile.basic_info?.redes_sociales?.linkedin"
+              target="_blank"
+              mat-icon-button
+              color="primary"
+            >
+              <img src="./assets/linkedin.svg" alt="" />
+            </a>
+
+            <a
+              *ngIf="dataProfile.basic_info?.redes_sociales?.twitter"
+              [href]="dataProfile.basic_info?.redes_sociales?.twitter"
+              target="_blank"
+              mat-icon-button
+              color="primary"
+            >
+              <img src="./assets/twitterx.svg" alt="" />
+            </a>
+
+            <a
+              *ngIf="dataProfile.basic_info?.redes_sociales?.github"
+              [href]="dataProfile.basic_info?.redes_sociales?.github"
+              target="_blank"
+              mat-icon-button
+              color="primary"
+            >
+              <img src="./assets/github.svg" alt="" />
+            </a>
+
+            <a
+              *ngIf="dataProfile.basic_info?.redes_sociales?.sitio_web"
+              [href]="dataProfile.basic_info?.redes_sociales?.sitio_web"
+              target="_blank"
+              mat-icon-button
+              color="primary"
+            >
+              <img src="./assets/web.png" alt="" />
+            </a>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions align="end" class="mt-4 form-actions">
+          <button mat-raised-button color="primary" (click)="editProfile()">
+            <mat-icon class="mr-2">edit</mat-icon> Editar Perfil
+          </button>
+          <button mat-stroked-button color="accent" (click)="editPhoto()">
+            <mat-icon class="mr-2">photo_camera</mat-icon> Cambiar Foto
+          </button>
+        </mat-card-actions>
+      </mat-card>
+      }
+    </div>
+  </div>
+</div>

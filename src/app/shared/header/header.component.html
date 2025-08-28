@@ -1,0 +1,40 @@
+<mat-toolbar ngSkipHydration>
+  <div class="container__logo">
+    <img [src]="dataUSer.foto" alt="" />
+  </div>
+
+  <span class="example-spacer"></span>
+
+  <button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+    mat-icon-button
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <div class="container-option">
+    <mat-menu #menu="matMenu">
+      @if (dataUSer) {
+      <div class="container__log-in">
+        <button mat-menu-item (click)="profileUser()">
+          <mat-icon>account_circle</mat-icon>
+          <span> {{ dataUSer.last_name + " " + dataUSer.first_name }}</span>
+        </button>
+
+        <button mat-menu-item (click)="logoutSection()">
+          <mat-icon>logout</mat-icon>
+          <span>Cerrar sesión</span>
+        </button>
+      </div>
+
+      }
+    </mat-menu>
+  </div>
+</mat-toolbar>
+
+@if (spinnerShow) {
+<div class="container__spiner">
+  <app-spiner [title]="'Un momento estamos cerrando su sesión'"></app-spiner>
+</div>
+}

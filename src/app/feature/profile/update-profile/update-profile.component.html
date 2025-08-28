@@ -1,0 +1,146 @@
+<app-header />
+
+
+<div class="page-container">
+  <div class="form-container">
+    <h2 class="form-title">Editar Perfil</h2>
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="form-grid">
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nombre</mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+          <input matInput formControlName="first_name" placeholder="Ej. Juan" />
+
+          @if (profileForm.get('first_name')?.hasError('required')) {
+          <mat-error> El nombre es obligatorio </mat-error>
+          }
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Apellido</mat-label>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input matInput formControlName="last_name" placeholder="Ej. Pérez" />
+
+          @if (profileForm.get('last_name')?.hasError('required')) {
+          <mat-error> El apellido es obligatorio </mat-error>
+          }
+        </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Teléfono</mat-label>
+        <mat-icon matPrefix>phone</mat-icon>
+        <input matInput formControlName="telefono" />
+
+        @if (profileForm.get('tipo_naturaleza')?.hasError('required')) {
+        <mat-error> El numero de telefono esobligatorio </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Tipo de Usuario</mat-label>
+        <mat-icon matPrefix>badge</mat-icon>
+        <input matInput formControlName="tipo_usuario" />
+
+        @if (profileForm.get('tipo_naturaleza')?.hasError('required')) {
+        <mat-error> El tipo de usuario es obligatorio </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Documento</mat-label>
+        <mat-icon matPrefix>description</mat-icon>
+        <input matInput formControlName="documento" />
+        @if (profileForm.get('tipo_naturaleza')?.hasError('required')) {
+        <mat-error> El tipo de naturaleza es obligatorio </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>LinkedIn</mat-label>
+        <mat-icon matPrefix>work</mat-icon>
+        <input matInput formControlName="linkedin" />
+        @if (profileForm.get('tipo_naturaleza')?.hasError('required')) {
+        <mat-error> El perfil de linkedin es obligatorio </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Twitter</mat-label>
+        <mat-icon matPrefix>alternate_email</mat-icon>
+        <input matInput formControlName="twitter" />
+        @if (profileForm.get('tipo_naturaleza')?.hasError('required')) {
+        <mat-error> El peril de X es obligatorio </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Github</mat-label>
+        <mat-icon matPrefix>code</mat-icon>
+        <input matInput formControlName="github" />
+        @if (profileForm.get('tipo_naturaleza')?.hasError('required')) {
+        <mat-error> La informacion de Github es obligatoria </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Sitio Web</mat-label>
+        <mat-icon matPrefix>language</mat-icon>
+        <input matInput formControlName="sitio_web" />
+        @if (profileForm.get('tipo_naturaleza')?.hasError('required')) {
+        <mat-error> El sitio web es obligatorio </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>¿Está verificado?</mat-label>
+        <mat-icon matPrefix>verified</mat-icon>
+        <mat-select formControlName="esta_verificado">
+          <mat-option [value]="true">Sí</mat-option>
+          <mat-option [value]="false">No</mat-option>
+        </mat-select>
+        @if (profileForm.get('tipo_naturaleza')?.hasError('required')) {
+        <mat-error> La verificacion es obigatoria </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="bio-field" appearance="outline">
+        <mat-label>Biografía</mat-label>
+        <mat-icon matPrefix>edit_note</mat-icon>
+        <textarea matInput rows="4" formControlName="biografia"></textarea>
+        @if (profileForm.get('tipo_naturaleza')?.hasError('required')) {
+        <mat-error> La biografia es obligatoria </mat-error>
+        }
+      </mat-form-field>
+
+      <div class="form-actions">
+          <button
+              mat-flat-button
+              color="primary"
+              type="submit"
+              [disabled]="profileForm.invalid"
+            >
+             <mat-icon>save</mat-icon>
+              Guardar Cambios
+            </button>
+
+        <!-- <button mat-raised-button color="primary" type="submit">
+          <mat-icon>save</mat-icon>
+          Guardar Cambios
+        </button> -->
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+@if (spinnerShow) {
+<div class="container__spiner">
+  <app-spiner
+    [title]="'Un momento estamos cerrando su sesión'"
+  ></app-spiner>
+</div>
+}
