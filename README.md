@@ -1,56 +1,103 @@
-
-## 📂 Estructura del proyecto
-
-app
-│── app.module.ts // Módulo raíz
-│── app-routing.module.ts // Rutas raíz
+VIDEOS\AULA-MATRIZ\AULA-FRONTEND\SRC
+│   index.html
+│   main.server.ts
+│   main.ts
+│   server.ts
+│   styles.scss
 │
-├── core // Servicios y lógica global
-│ ├── guards
-│ │ └── auth.guard.ts
-│ ├── interceptors
-│ │ └── auth.interceptor.ts
-│ └── services
-│ ├── alert
-│ │ └── alert.service.ts
-│ ├── auth
-│ │ └── auth.service.ts
-│ ├── crud
-│ │ └── crud.service.ts
-│ └── storage
-│ └── storage.service.ts
+├───app
+│   │   app.component.html
+│   │   app.component.scss
+│   │   app.component.spec.ts
+│   │   app.component.ts
+│   │   app.config.server.ts
+│   │   app.config.ts
+│   │   app.routes.server.ts
+│   │   app.routes.ts
+│   │
+│   ├───core
+│   │   ├───guard
+│   │   │       auth.guard.ts
+│   │   │
+│   │   ├───interceptors
+│   │   │       auth.interceptors.ts
+│   │   │
+│   │   ├───interface
+│   │   │       profile.interface.ts
+│   │   │
+│   │   └───services
+│   │       ├───alert
+│   │       │       alert.service.ts
+│   │       │
+│   │       ├───auth
+│   │       │       auth.service.ts
+│   │       │
+│   │       ├───crud
+│   │       │       crud.service.ts
+│   │       │
+│   │       └───storage
+│   │               storage.service.ts
+│   │
+│   ├───feature
+│   │   ├───auth
+│   │   │   │   auth-routing.module.ts
+│   │   │   │   auth.module.ts
+│   │   │   │
+│   │   │   └───login
+│   │   │           login.component.html
+│   │   │           login.component.scss
+│   │   │           login.component.spec.ts
+│   │   │           login.component.ts
+│   │   │
+│   │   └───profile
+│   │       │   profile-routing.module.ts
+│   │       │   profile.module.ts
+│   │       │
+│   │       ├───update-photo
+│   │       │       update-photo.component.html
+│   │       │       update-photo.component.scss
+│   │       │       update-photo.component.spec.ts
+│   │       │       update-photo.component.ts
+│   │       │
+│   │       ├───update-profile
+│   │       │       update-profile.component.html
+│   │       │       update-profile.component.scss
+│   │       │       update-profile.component.spec.ts
+│   │       │       update-profile.component.ts
+│   │       │
+│   │       └───view-profile
+│   │               view-profile.component.html
+│   │               view-profile.component.scss
+│   │               view-profile.component.spec.ts
+│   │               view-profile.component.ts
+│   │
+│   ├───import
+│   │       import.module.ts
+│   │
+│   └───shared
+│       │   shared.module.ts
+│       │
+│       ├───header
+│       │       header.component.html
+│       │       header.component.scss
+│       │       header.component.spec.ts
+│       │       header.component.ts
+│       │
+│       └───spiner
+│               spiner.component.html
+│               spiner.component.scss
+│               spiner.component.spec.ts
+│               spiner.component.ts
 │
-├── feature // Features independientes
-│ ├── auth
-│ │ ├── login
-│ │ │ └── login.component.ts|html|scss
-│ │ ├── auth-routing.module.ts
-│ │ └── auth.module.ts
-│ └── profile
-│ ├── update-photo
-│ │ └── update-photo.component.ts|html|scss
-│ ├── update-profile
-│ │ └── update-profile.component.ts|html|scss
-│ ├── view-profile
-│ │ └── view-profile.component.ts|html|scss
-│ ├── profile-routing.module.ts
-│ └── profile.module.ts
-│
-├── import // Importaciones comaprtidas
-│ └── import.module.ts
-│
-├── shared
-│ ├── shared.module.ts
-│ ├── header
-│ │ └── header.component.ts|html|scss
-│ └── spinner
-│ └── spinner.component.ts|html|scss
-│
-└── assets // Recursos estáticos
-
-
+└───assets
+        camaramara-50.png
+        github.svg
+        linkedin.svg
+        twitterx.svg
+        web.png
 
 # FrontEnd
+
 Este prueba tecnica esta desarrollada en angualr 19
 
 ## Requisitos
@@ -59,12 +106,13 @@ Este prueba tecnica esta desarrollada en angualr 19
 2. instalar angular (npm install -g @angular/cli)
 3. Tener instalado git (https://git-scm.com/)
 
-## Clonar 
+## Clonar
+
 1. Clonar repositorio (git@github.com:edercabezas/aula-frontend.git)
 
 ## configuracion de ambiente local
 
-2. ingresar a la carpeta del repositorio  (cd innclod)
+2. ingresar a la carpeta del repositorio (cd innclod)
 3. Instalacion de dependencia de angualr (npm install o npm i)
 4. levantar el servidor local angular (ng serve o ng s)
 5. crear nuevo componente (ng generate component nombre_componente o ng g c nombre_componente)
@@ -74,8 +122,7 @@ Este prueba tecnica esta desarrollada en angualr 19
 
 7. compilar el proeycto para desliegue (ng build)
 
-
-Nota cada uno de los puntos se desarrollo de acuerdo a la especificaciones del documento hubieron una inconcistencia 
+Nota cada uno de los puntos se desarrollo de acuerdo a la especificaciones del documento hubieron una inconcistencia
 
 1. Estructura se solicitaba este campo "tipo_naturaleza": "natural", pero el back no loe staba esperando.
 2. La imagen nos e puede cargar ya que al aprecer el back no esta exponiendo los documentso estaticos
