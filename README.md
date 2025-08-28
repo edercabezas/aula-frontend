@@ -1,58 +1,52 @@
-app
-│── app.module.ts                 // Módulo raíz
-│── app-routing.module.ts         // Rutas raíz
-│
-├── core                          // Servicios y lógica que se usa en toda la app
-│   ├── guards
-│   │   └── auth.guard.ts
-│   │
-│   ├── interceptors
-│   │   └── auth.interceptor.ts
-│   │
-│   └── services
-│       ├── alert
-│       │   └── alert.service.ts
-│       │
-│       ├── auth
-│       │   └── auth.service.ts
-│       │
-│       ├── crud
-│       │   └── crud.service.ts
-│       │
-│       └── storage
-│           └── storage.service.ts
-│
-├── feature                       // Cada feature tiene su propio módulo
-│   ├── auth
-│   │   ├── login                 // Login component
-│   │   │   └── login.component.ts|html|scss
-│   │   ├── auth-routing.module.ts
-│   │   └── auth.module.ts
-│   │
-│   └── profile
-│       ├── update-photo
-│       │   └── update-photo.component.ts|html|scss
-│       ├── update-profile
-│       │   └── update-profile.component.ts|html|scss
-│       ├── view-profile
-│       │   └── view-profile.component.ts|html|scss
-│       ├── profile-routing.module.ts
-│       └── profile.module.ts
-│
-├── import                        // Módulo de imports globales
-│   └── import.module.ts
-│
-├── shared                        // Componentes reutilizables reutilizables
-│   ├── shared.module.ts
-│   │
-│   ├── header
-│   │   └── header.component.ts|html|scss
-│   │
-│   └── spinner
-│       └── spinner.component.ts|html|scss
-│
-└── assets                        // Recursos estáticos (imgs, icons, css)
 
+## 📂 Estructura del proyecto
+
+app
+│── app.module.ts // Módulo raíz
+│── app-routing.module.ts // Rutas raíz
+│
+├── core // Servicios y lógica global
+│ ├── guards
+│ │ └── auth.guard.ts
+│ ├── interceptors
+│ │ └── auth.interceptor.ts
+│ └── services
+│ ├── alert
+│ │ └── alert.service.ts
+│ ├── auth
+│ │ └── auth.service.ts
+│ ├── crud
+│ │ └── crud.service.ts
+│ └── storage
+│ └── storage.service.ts
+│
+├── feature // Features independientes
+│ ├── auth
+│ │ ├── login
+│ │ │ └── login.component.ts|html|scss
+│ │ ├── auth-routing.module.ts
+│ │ └── auth.module.ts
+│ └── profile
+│ ├── update-photo
+│ │ └── update-photo.component.ts|html|scss
+│ ├── update-profile
+│ │ └── update-profile.component.ts|html|scss
+│ ├── view-profile
+│ │ └── view-profile.component.ts|html|scss
+│ ├── profile-routing.module.ts
+│ └── profile.module.ts
+│
+├── import // Importaciones comaprtidas
+│ └── import.module.ts
+│
+├── shared
+│ ├── shared.module.ts
+│ ├── header
+│ │ └── header.component.ts|html|scss
+│ └── spinner
+│ └── spinner.component.ts|html|scss
+│
+└── assets // Recursos estáticos
 
 
 
@@ -66,7 +60,7 @@ Este prueba tecnica esta desarrollada en angualr 19
 3. Tener instalado git (https://git-scm.com/)
 
 ## Clonar 
-1. Clonar repositorio (https://gitlab.com/edercortez10/innclod/-/tree/develop?ref_type=heads)
+1. Clonar repositorio (git@github.com:edercabezas/aula-frontend.git)
 
 ## configuracion de ambiente local
 
