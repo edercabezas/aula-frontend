@@ -32,6 +32,7 @@ export class UpdateProfileComponent implements OnInit {
     this._crud
       .getProfile()
       .then((response: any) => {
+        console.log(response)
         this.setDataPRofile(response)
       })
       .catch((error: any) => {
@@ -75,6 +76,7 @@ export class UpdateProfileComponent implements OnInit {
     this._crud.updateProfile(data)
       .then((response: any) => {
         if (response) {
+          console.log(response)
           this._alert.showToasterFull('Perfil actualizado exitosamente');
         }
       })
@@ -90,7 +92,7 @@ export class UpdateProfileComponent implements OnInit {
 
     returData(): any {
       return {
-       usergggg: {
+       user: {
         first_name: this.profileForm.get('first_name')?.value,
         last_name:  this.profileForm.get('last_name')?.value,
        },
